@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute selectors</title>
+    <style>
+        /*#some-id {
+            width: 400px;
+            height: 300px;
+            background-color: red;  
+        }*/
+        /*.some-class {
+            width: 400px;
+            height: 300px;
+            background-color: red;  
+        }*/
+
+        /*a[target] {
+            color: red;
+        }*/
+        /*a[target="_blank"] {
+            color: red;
+        }*/
+
+        /*div[class*="wrap"] {
+            background-color: yellow;
+            width: 400px;
+            height: 300px;
+         }*/
+         /*a[href^="http://www.link-group.eu"] {
+             color: red;
+         }*/
+         a[ href$=".pdf"] {
+             color: red;
+         }
+         /*.heading {
+             color: blue;
+         }*/
+
+         /*a[title~="link"] {
+             color: red;
+         }*/
+
+         [class|="top"] {
+             color: red;
+         }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    
+    <h1 class="top-header">Welcome</h1>
+    <p class="top-text">Hello world!</p>
+    <p class="top">Hello world again!</p>
+    <p class="top text">Hello world once more!</p>
+ 
+</body>
+</html>
