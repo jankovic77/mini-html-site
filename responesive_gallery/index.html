@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ 
+      .container {
+          max-width: 960px;
+          width: 90%;
+          margin: 0 auto;
+          
+
+          display: grid;
+          /*grid-template-columns: repeat(auto-fit, minmax(50px, auto));*/
+         grid-template-columns: repeat(5, 1fr);
+         grid-auto-rows: minmax(60px, auto);
+          grid-gap: 8px;
+          
+      }
+     .box {
+          
+          background-color: blue;
+          
+          border-radius: 10px;
+        
+      } 
+      .naziv {
+          background-color: rgb(219, 219, 245);
+          color: black;
+          text-align: center;
+          font-family: sans-serif;
+          border-radius: 0 0 10px 10px;
+      }
+      .p {
+        font-family: sans-serif;
+        margin: 0 auto;
+        text-align: center;
+       
+      }
+    
+          
+          @media screen and (max-width: 1024px){
+          .container{
+              grid-template-columns: repeat(5, 1fr);
+          } 
+          } 
+          @media screen and (max-width: 768px){
+          .container{
+              grid-template-columns: repeat(3, 1fr);
+          }
+          }
+          @media screen and (max-width: 414px){
+          .container{
+              grid-template-columns: repeat(1, 1fr);
+          }
+          }
+       
+
+  </style>
+</head>
+<body>
+  <body>
+    <h1>Gallery Heading</h1>
+    <div class="container">
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            
+            <div class="naziv">Image title</div>
+        </div>
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            
+            <div class="naziv">Image title</div>
+        </div>
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            
+            <div class="naziv">Image title</div>
+        </div>
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            
+            <div class="naziv">Image title</div>
+        </div>
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            
+            <div class="naziv">Image title</div>
+        </div>
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            
+            <div class="naziv">Image title</div>
+        </div>
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            <div class="naziv">Image title</div>
+        </div>
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            <div class="naziv">Image title</div>
+        </div>
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            <div class="naziv">Image title</div>
+        </div>
+        <div class="box">
+          <img src="images\placeholder-image200.png" alt="Image title">
+            <div class="naziv">Image title</div>
+        </div>
+        
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium varius varius. Duis volutpat elementum neque, sed congue neque luctus ut. Nunc ligula lacus, hendrerit eget urna finibus, tristique ullamcorper nulla. Pellentesque congue laoreet eros. Nunc sit amet ipsum id ex rhoncus ornare quis eu mi. Morbi ac finibus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc mattis
+      tempus tempor. Etiam at neque sed nisl ornare semper pharetra non sapien. Praesent pellentesque, ipsum a fermentum fermentum, sapien dui pharetra felis, in dictum arcu urna in nibh. Aliquam pulvinar pellentesque nisl, pharetra ultricies mauris auctor vel. Aliquam erat volutpat. Vestibulum suscipit ut ligula finibus semper. In hac habitasse platea dictumst. Fusce ante nisi, auctor vel fermentum sed, tincidunt non ex. </p>
+        
+
+</body>
+</body>
+</html>
