@@ -7,6 +7,26 @@
     <title>Program za obavljanje osnovnih aritmetickih operacija</title>
 </head>
 <body>
-    
+    <script>
+        var A = prompt("Unesite prvi broj");
+        var B = prompt("Unesite Racunsku operaciju:- + / *");
+        var C = prompt("Unesite drugi broj");
+        
+        if (B == "/") {
+        var sum = parseInt(A) / parseInt(C);
+        alert("Sum is: " + sum);
+        } else if ( B == "*") {
+        var sum = parseInt(A) * parseInt(C);
+        alert("Sum is: " + sum);    
+        } else if ( B == "-") {
+        var sum = parseInt(A) - parseInt(C);
+        alert("Sum is: " + sum);
+        }  else if ( B == "+") {
+        var sum = parseInt(A) + parseInt(C);
+        alert("Sum is: " + sum);
+        }   else {
+            alert("Zaboravili ste uneti racunsku operaciju");}
+ 
+    </script>
 </body>
 </html>
