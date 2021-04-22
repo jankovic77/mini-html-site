@@ -1,5 +1,61 @@
+/*************************HEADER*********************************/
+header{
+    position: relative;
+    left: 0;
+    right: 0;
+    
+}
+
+
+header a{
+    color:gray;
+    margin-left: 24px;
+    
+    
+}
+header a :hover{
+    color:gray;
+}
+header a :visited{
+    color:gray;
+}
+#menu-icon {
+    width: 32px;
+}
+
+
+
+
+
+
+/********************HERO SECTION********************************/
+
 #hero-section{
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
+    height: 60vh;
+    background-position-x: center;
+    
+}
+    
+.mark{
+    display: inline-block;
+    background-color: #50a349;
+   padding: 14px 1px;
+   
+   
+}
+
+/********************ABOUT US SECTION********************************/
+
+#black {
+    background-color: rgb(46, 43, 43);
+    
+}
+
+
+/********************ABOUT US SECTION********************************/
+footer{
+    background-color: black;
 }
