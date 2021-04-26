@@ -4,7 +4,11 @@ header{
     left: 0;
     right: 0;
     
+    
 }
+#header-logo {
+    color: rgb(189, 194, 196);
+    }
 
 
 header a{
@@ -22,6 +26,7 @@ header a :visited{
 #menu-icon {
     width: 32px;
 }
+
 
 
 
