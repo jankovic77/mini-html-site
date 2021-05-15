@@ -1,0 +1,57 @@
+
+            body {
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+    
+            #container {
+                width: 460px;
+                margin: 0 auto;
+            }
+    
+            form label,
+            form input {
+                width: 100%;
+                box-sizing: border-box;
+            }
+    
+            form input {
+                padding: 8px;
+            }
+    
+            form label {
+                font-weight: bold;
+            }
+    
+            form div {
+                margin: 16px 0px;
+            }
+    
+    
+            .icon {
+                position: absolute;
+                width: auto;
+                bottom: 10px;
+                right: 10px;
+                margin-top: 0;
+            }
+    
+            .success {
+                background: url("./check-circle-regular.svg");
+                background-repeat: no-repeat;
+                padding-right: calc(1.5em + .75rem);
+                background-position: right calc(.375em + .1875rem) center;
+                background-size: 1.5rem;
+                right: 0;
+    
+            }
+    
+            .fail {
+                background: url("./times-circle-regular.svg");
+                background-repeat: no-repeat;
+                padding-right: calc(1.5em + .75rem);
+                background-position: right calc(.375em + .1875rem) center;
+                background-size: 1.5rem;
+                right: 0;
+            }
+     
