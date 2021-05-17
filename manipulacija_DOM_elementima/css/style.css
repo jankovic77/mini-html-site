@@ -47,7 +47,7 @@
             }
     
             .success {
-                background: url("/manipulacija_DOM_elementima/img/check-circle-regular.svg");
+                background: url("../img/check-circle-regular.svg");
                 background-repeat: no-repeat;
                 padding-right: calc(1.5em + .75rem);
                 background-position: right calc(.375em + .1875rem) center;
@@ -57,7 +57,7 @@
             }
     
             .fail {
-                background: url("/manipulacija_DOM_elementima/img/times-circle-regular.svg");
+                background: url("../img/times-circle-regular.svg");
                 background-repeat: no-repeat;
                 padding-right: calc(1.5em + .75rem);
                 background-position: right calc(.375em + .1875rem) center;
