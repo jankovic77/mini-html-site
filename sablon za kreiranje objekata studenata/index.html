@@ -9,67 +9,67 @@
 <body>
     <script>
         
-function Student(name, address, phone, chourse)    {
-this.name = name;
-this.address = address;
-this.phone = phone;
-this.chourse = chourse;
-
-this.getName = function ()  {
-return this.Name +  " " + this.address;
-
-
-}
-
-
-
-
-
-this.getInfo = function () {
-
-return "Name: " + this.name + "\n" +
-    "Address: " + this.address + "\n" +
-    "Phone: " + this.phone + "\n" +
-    "Chourse: " + this.chourse 
-
-}
-
-
-
-}
-
-let student1 = new Student("Igor Jankovic", "Delijski Vis 44", "060/300-6785", "Programiranje");
-
-let student1Info = student1.getInfo();
-
-console.log(student1Info);
-
-
-
-
-
-Student.prototype = Object.create(Student.prototype);
-Student.prototype.construktor = Student;
-
-let student2 = new Student("Marina Jankovic", "Delijski Vis 45", "061/300-6785", "Matematika");
-
-let student2Info = student2.getInfo();
-
-console.log(student2Info);
-
-
-
-let student3 = new Student("Milica Jankovic", "Delijski Vis 46", "062/300-6785", "Engleski");
-
-let student3Info = student3.getInfo();
-
-console.log(student3Info);
-
-
-
-
-
-
-    </script>
+        function Student(name, address, phone, chourse)    {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.chourse = chourse;
+        
+        this.getName = function ()  {
+        return this.Name +  " " + this.address;
+        
+        
+        }
+        
+        
+        
+        
+        
+        this.getInfo = function () {
+        
+        return "Name: " + this.name + "\n" +
+            "Address: " + this.address + "\n" +
+            "Phone: " + this.phone + "\n" +
+            "Chourse: " + this.chourse 
+        
+        }
+        
+        
+        
+        }
+        
+        let student1 = new Student("Igor Jankovic", "Delijski Vis 44", "060/300-6785", "Programiranje");
+        
+        let student1Info = student1.getInfo();
+        
+        console.log(student1Info);
+        
+        
+        
+        
+        
+        Student.prototype = Object.create(Student.prototype);
+        Student.prototype.construktor = Student;
+        
+        let student2 = new Student("Marina Jankovic", "Delijski Vis 45", "061/300-6785", "Matematika");
+        
+        let student2Info = student2.getInfo();
+        
+        console.log(student2Info);
+        
+        
+        
+        let student3 = new Student("Milica Jankovic", "Delijski Vis 46", "062/300-6785", "Engleski");
+        
+        let student3Info = student3.getInfo();
+        
+        console.log(student3Info);
+        
+        
+        
+        
+        
+        
+            </script>
 </body>
 </html>
