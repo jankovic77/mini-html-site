@@ -12,49 +12,30 @@
                 white-space: pre-wrap;
             }
   </style>
-        <div id="div-wrapper">
-    Name: Ebonie Rangel
-    Adress: 7175 Yukon Street
-    Phone: (507) 833-3567
-    Course: Geography
-    
-    Name: Keenan Ellwood
-    Adress: 2 Elm Lane
-    Phone: (894) 831-6482
-    Course: History
-    
-    Name: Kailan Smart
-    Adress: 795 Harvard Street
-    Phone: (925) 856-5167
-    Course: Biology
-    
-    Name: Kaydan Hirst
-    Adress: 9 East Lakeview Ave.
-    Phone: (939) 812-6141
-    Course: Programming
-    
-    Name: Isabelle Prentice
-    Adress: 700 Rock Maple St.
-    Phone: (899) 875-8627
-    Course: Math
-    </div>
+       <div id="div-wrapper">
+       
+        </div>
         <script>
             async function getData() {
                 try {
-                    divWrapper = document.getElementById('div-wrapper');
+                   
                     let data = await fetch('https://v-dresevic.github.io/Advanced-JavaScript-Programming/data/students.txt');
                     if (data.status !== 200) {
                         throw new Error("Error in connection with file");
                     }
+                   
                     let text = await data.text();
+                    
                     var arr = text.split('\n');
     
     
-        function Student(name, address, phone, chourse)    {
+        function Student(name, address, phone, chourse,)    {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.chourse = chou's;
+        this.chourse = chourse;
+        
+        
         
         this.getName = function ()  {
         return this.Name +  " " + this.address;
@@ -65,17 +46,62 @@
         this.getInfo = function () {
         
         return "Name: " + this.name + "\n" +
-            "Address: " + this.address + "\n" +
+            "Address: " + this.address + "\n" + 
             "Phone: " + this.phone + "\n" +
-            "Chourse: " + this.chourse 
+            "Chourse: " + this.chourse + "\n";
+           
+            
+           
         
         }
         
         }
-    
+        let student1 = new Student("Ebonie Rangel", "7175 Yukon Street", "(507) 833-3567", "Geography");
+        
+        let student1Info = student1.getInfo(); 
+        
+        
+      
+        
+        
+        
+        
+        
+        Student.prototype = Object.create(Student.prototype);
+        Student.prototype.construktor = Student;
+        
+        let student2 = new Student("Keenan Ellwood", "2 Elm Lane", "(894) 831-6482", "History");
+        
+        let student2Info = student2.getInfo();
+        
+        
+        
+        
+        
+        let student3 = new Student("Kailan Smart", "795 Harvard Street", "(925) 856-5167", "Biology");
+        
+        let student3Info = student3.getInfo();
+        
+        
+
+
+
+        let student4 = new Student("Kaydan Hirst", "9 East Lakeview Ave.", "(939) 812-6141", "Programming");
+        
+        let student4Info = student3.getInfo();
+        
+        
+
+
+
+        let student5 = new Student("Isabelle Prentice", "700 Rock Maple St.", "(899) 875-8627", "Math");
+        
+        let student5Info = student3.getInfo();
+        
+        
     
         document.getElementById("div-wrapper").innerHTML =
-        student1.getInfo().concat(student2.getInfo()).concat(student3.getInfo()).concat(student4.getInfo()).concat(student5.getInfo());
+        student1.getInfo() + "\n" .concat(student2.getInfo()) + "\n".concat(student3.getInfo()) + "\n".concat(student4.getInfo()) + "\n".concat(student5.getInfo());
     
     
         } catch (err) {
