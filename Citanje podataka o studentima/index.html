@@ -4,99 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Citanje podataka o studentima</title>
 </head>
-<body>
   <style>
-            #div-wrapper {
-                white-space: pre-wrap;
-            }
+    #div-wrapper {
+    display: inline-block;
+    width: 100%;
+    background-color: white;
+}
   </style>
-       <div id="div-wrapper">
-       
-        </div>
-        <script>
-            async function getData() {
-                try {
-                   
-                    let data = await fetch('https://v-dresevic.github.io/Advanced-JavaScript-Programming/data/students.txt');
-                    if (data.status !== 200) {
-                        throw new Error("Error in connection with file");
-                    }
-                   
-                    let text = await data.text();
-                    
-                    var arr = text.split('\n');
-    
-    
-        function Student(name, address, phone, chourse,)    {
+</head>
+
+<body>
+
+<div id="div-wrapper">
+<p id="student1"></p>
+<p id="student2"></p>
+<p id="student3"></p>
+<p id="student4"></p>
+<p id="student5"></p>
+</div>
+
+<script>
+    class Student{
+    constructor(name, address, phone, course){
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.chourse = chourse;
-        
-        
-        this.getName = function ()  {
-        return this.Name +  " " + this.address;
-        
-        }
-        
-        this.getInfo = function () {
-        
+        this.course = course;
+    }
+    getInfo(){
         return "Name: " + this.name + "\n" +
-            "Address: " + this.address + "\n" + 
+            "Address: " + this.address + "\n" +
             "Phone: " + this.phone + "\n" +
-            "Chourse: " + this.chourse + "\n";
-           
-        }
-        
-        }
-        let student1 = new Student("Ebonie Rangel", "7175 Yukon Street", "(507) 833-3567", "Geography");
-        
-        let student1Info = student1.getInfo();   
-        
-        Student.prototype = Object.create(Student.prototype);
-        Student.prototype.construktor = Student;
-        
-        let student2 = new Student("Keenan Ellwood", "2 Elm Lane", "(894) 831-6482", "History");
-        
-        let student2Info = student2.getInfo();
-        
-        
+            "Course: " + this.course + "\n"                  
+    }          
+}
 
-        let student3 = new Student("Kailan Smart", "795 Harvard Street", "(925) 856-5167", "Biology");
-        
-        let student3Info = student3.getInfo();
-        
-        
+    let p1 = document.getElementById("student1");
+    let p2 = document.getElementById("student2");
+    let p3 = document.getElementById("student3");
+    let p4 = document.getElementById("student4");
+    let p5 = document.getElementById("student5");
 
+    async function getData(){
 
-        let student4 = new Student("Kaydan Hirst", "9 East Lakeview Ave.", "(939) 812-6141", "Programming");
-        
-        let student4Info = student3.getInfo();
-        
-        
+        let data = await fetch("https://v-dresevic.github.io/Advanced-JavaScript-Programming/data/students.txt");
+        let text = await data.text();
+        return text;
+    }
 
+    getData().then(function(result){
+    let arrFromData = result.split("\n")
 
-        let student5 = new Student("Isabelle Prentice", "700 Rock Maple St.", "(899) 875-8627", "Math");
-        
-        let student5Info = student3.getInfo();
-        
-        
-    
-        document.getElementById("div-wrapper").innerHTML =
-        student1.getInfo() + "\n" .concat(student2.getInfo()) + "\n".concat(student3.getInfo()) + "\n".concat(student4.getInfo()) + "\n".concat(student5.getInfo());
-    
-    
-        } catch (err) {
-        divWrapper.innerHTML = 'Error: ' + err.message;
-        }
-         }
-    
-        getData()
-    
-    
-        </script>
-    
+    let student1 = new Student(arrFromData[0], arrFromData[1], arrFromData[2], arrFromData[3]);
+    let student2 = new Student(arrFromData[4], arrFromData[5], arrFromData[6], arrFromData[7]);
+    let student3 = new Student(arrFromData[8], arrFromData[9], arrFromData[10], arrFromData[11]);
+    let student4 = new Student(arrFromData[12], arrFromData[13], arrFromData[14], arrFromData[15]);
+    let student5 = new Student(arrFromData[16], arrFromData[17], arrFromData[18], arrFromData[19]);
+     
+    p1.innerText = student1.getInfo();
+    p2.innerText = student2.getInfo();
+    p3.innerText = student3.getInfo();
+    p4.innerText = student4.getInfo();
+    p5.innerText = student5.getInfo();
+    });
+
+</script>
 </body>
 </html>
