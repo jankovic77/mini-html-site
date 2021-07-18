@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rad sa podacima na frontendu</title>
+
+    <style>
+        #submitButton {
+            display: block;
+            margin-top: 20px;
+            height: 40px;
+            background-color: rgb(102, 255, 0);
+        }
+        
+        #clearButton {
+            display: block;
+            margin-top: 20px;
+            height: 40px;
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <form>
+        <h2 id="prvoPitanje">Question 1:&nbsp;</h2>
+        <input name="option1" type="radio" id="a" value="New York Bulls">
+        <label for="a"></label>
+        <br>
+        <input name="option1" type="radio" id="b" value="Los Angeles Kings">
+        <label for="b"></label>
+        <br>
+        <input name="option1" type="radio" id="c" value="Golden State Warriros">
+        <label for="c"></label>
+        <br>
+        <input name="option1" type="radio" id="d" value="Huston Rocket">
+        <label for="d"></label>
+        <br>
+
+
+        <h2 id="DrugoPitanje">Question 2:&nbsp;</h2>
+        <input name="option2" type="radio" id="e" value="Hindi">
+        <label for="e"></label>
+        <br>
+        <input name="option2" type="radio" id="f" value="Mandarin">
+        <label for="f"></label>
+        <br>
+        <input name="option2" type="radio" id="g" value="Nepalese">
+        <label for="g"></label>
+        <br>
+        <input name="option2" type="radio" id="h" value="Thai">
+        <label for="h"></label>
+        <br>
+
+        <h2 id="trecePitanje">Question 3:&nbsp;</h2>
+        <input name="option3" type="radio" id="i" value="Berlin">
+        <label for="i"></label>
+        <br>
+        <input name="option3" type="radio" id="j" value="Paris">
+        <label for="j"></label>
+        <br>
+        <input name="option3" type="radio" id="k" value="Rome">
+        <label for="k"></label>
+        <br>
+        <input name="option3" type="radio" id="l" value="London">
+        <label for="l"></label>
+        <br>
+
+        <h2 id="cetvrtoPitanje">Question 4:&nbsp;</h2>
+        <input name="option4" type="radio" id="m" value="Pablo Picasso">
+        <label for="m"></label>
+        <br>
+        <input name="option4" type="radio" id="n" value="Vincent van Gogh">
+        <label for="n"></label>
+        <br>
+        <input name="option4" type="radio" id="o" value=" Salvador Dalí">
+        <label for="o"></label>
+        <br>
+        <input name="option4" type="radio" id="p" value="Edgar Degas">
+        <label for="p"></label>
+
+        <button id="submitButton">Submit answers</button>
+        <button id="clearButton">Clear local storage</button>
+
+    </form>
+
+
+    <script>
+        fetch('quiz.json')
+            .then(function(response) {
+                if (!response.ok) {
+                    throw Error("Error while reading file.");
+                }
+                return response.json();
+            }).then(function(kviz) {
+
+                console.log(kviz);
+
+                /*************************************PRIKAZ PITANJA******************************************/
+
+                document.querySelector("#prvoPitanje").innerText += kviz.quiz.q1.question;
+                document.querySelector("label[for=a]").innerText = kviz.quiz.q1.options[0];
+                document.querySelector("label[for=b]").innerText = kviz.quiz.q1.options[1];
+                document.querySelector("label[for=c]").innerText = kviz.quiz.q1.options[2];
+                document.querySelector("label[for=d]").innerText = kviz.quiz.q1.options[3];
+
+                document.querySelector("#DrugoPitanje").innerText += kviz.quiz.q2.question;
+                document.querySelector("label[for=e]").innerText = kviz.quiz.q2.options[0];
+                document.querySelector("label[for=f]").innerText = kviz.quiz.q2.options[1];
+                document.querySelector("label[for=g]").innerText = kviz.quiz.q2.options[2];
+                document.querySelector("label[for=h]").innerText = kviz.quiz.q2.options[3];
+
+                document.querySelector("#trecePitanje").innerText += kviz.quiz.q3.question;
+                document.querySelector("label[for=i]").innerText = kviz.quiz.q3.options[0];
+                document.querySelector("label[for=j]").innerText = kviz.quiz.q3.options[1];
+                document.querySelector("label[for=k]").innerText = kviz.quiz.q3.options[2];
+                document.querySelector("label[for=l]").innerText = kviz.quiz.q3.options[3];
+
+                document.querySelector("#cetvrtoPitanje").innerText += kviz.quiz.q4.question;
+                document.querySelector("label[for=m]").innerText = kviz.quiz.q4.options[0];
+                document.querySelector("label[for=n]").innerText = kviz.quiz.q4.options[1];
+                document.querySelector("label[for=o]").innerText = kviz.quiz.q4.options[2];
+                document.querySelector("label[for=p]").innerText = kviz.quiz.q4.options[3];
+
+
+
+
+                /**************************************CEKIRANJE ODGOVORA NA OSNOVU ZAPISA IZ LOCAL STORAGE-a*****************************************/
+
+                (function() {
+
+                    var buttonList = document.getElementsByName("option1");
+                    var val = localStorage.option1;
+                    for (var i = 0; i < buttonList.length; i++) {
+                        if (document.getElementsByName("option1")[i].value == val) {
+                            document.querySelectorAll('input[name="option1"]')[i].checked = true;
+                        }
+                    }
+
+                    var buttonList2 = document.getElementsByName("option2");
+                    var val2 = localStorage.option2;
+                    for (var i = 0; i < buttonList2.length; i++) {
+                        if (document.getElementsByName("option2")[i].value == val2) {
+                            document.querySelectorAll('input[name="option2"]')[i].checked = true;
+                        }
+                    }
+
+                    var buttonList3 = document.getElementsByName("option3");
+                    var val3 = localStorage.option3;
+                    for (var i = 0; i < buttonList3.length; i++) {
+                        if (document.getElementsByName("option3")[i].value == val3) {
+                            document.querySelectorAll('input[name="option3"]')[i].checked = true;
+                        }
+                    }
+
+                    var buttonList4 = document.getElementsByName("option4");
+                    var val4 = localStorage.option4;
+                    for (var i = 0; i < buttonList4.length; i++) {
+                        if (document.getElementsByName("option4")[i].value == val4) {
+                            document.querySelectorAll('input[name="option4"]')[i].checked = true;
+                        }
+                    }
+
+
+
+
+                })();
+
+
+
+
+
+                /*************************************UPISIVANJE PODATAKA U LOCAL STORAGE******************************************/
+
+                submitButton.onclick = function write(e) {
+                    e.preventDefault();
+
+                    const zajednicko = document.querySelectorAll('input[name="option1"]');
+                    let selectedValue;
+                    for (const jedna of zajednicko) {
+                        if (jedna.checked) {
+                            selectedValue = jedna.value;
+                        }
+                    }
+                    localStorage.setItem('option1', selectedValue);
+
+
+                    const zajednicko2 = document.querySelectorAll('input[name="option2"]');
+                    let selectedValue2;
+                    for (const jedna2 of zajednicko2) {
+                        if (jedna2.checked) {
+                            selectedValue2 = jedna2.value;
+                        }
+                    }
+                    localStorage.setItem('option2', selectedValue2);
+
+
+                    const zajednicko3 = document.querySelectorAll('input[name="option3"]');
+                    let selectedValue3;
+                    for (const jedna3 of zajednicko3) {
+                        if (jedna3.checked) {
+                            selectedValue3 = jedna3.value;
+                        }
+                    }
+                    localStorage.setItem('option3', selectedValue3);
+
+
+                    const zajednicko4 = document.querySelectorAll('input[name="option4"]');
+                    let selectedValue4;
+                    for (const jedna4 of zajednicko4) {
+                        if (jedna4.checked) {
+                            selectedValue4 = jedna4.value;
+                        }
+                    }
+                    localStorage.setItem('option4', selectedValue4);
+                }
+
+                /*************************************DUGME ZA BRISANJE SVIH PODATAKA IZ LOCAL STORAGE-a******************************************/
+                clearButton.onclick = function clearAll(e) {
+                    e.preventDefault();
+                    localStorage.clear();
+                }
+
+
+
+
+            }).catch(function(err) {
+                console.log('Fetch problem: ' + err.message);
+
+            });
+    </script>
+</body>
+
+</html>
