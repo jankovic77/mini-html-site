@@ -1,0 +1,48 @@
+#icon-container {
+    display: flex;
+    height: 15vh;
+    border-radius: 10px 10px 0 0;
+   
+}
+
+#icon-container > div:nth-child(1) {
+   background-color: rgb(225, 174, 238);
+}
+
+#icon-container > div:nth-child(2) {
+    background-color: rgb(225, 174, 238);
+}
+
+
+#tab-1 {
+    align-items: stretch;
+    flex-grow: 1;
+    border-radius: 10px 0 0 0;
+    background-image: url('../../assets/save-disc.png');
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center center;
+    border: 3px solid #000000;
+   
+}
+
+
+#tab-2 {
+    align-items: stretch;
+    flex-grow: 1;
+    border-radius: 0 10px 0 0;
+    background-image: url('../../assets/list.png');
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center center;
+    border: 3px solid #000000;
+   
+}
+
+#icon-container > div:nth-child(1).inactive-tab {
+    background-color: rgb(160, 255, 255);
+}
+
+#icon-container > div:nth-child(2).inactive-tab {
+    background-color: rgb(160, 255, 255);
+}

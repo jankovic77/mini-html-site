@@ -1,0 +1,11 @@
+body {
+    background : linear-gradient(68deg, #da8e70, #0400ff);
+    
+    margin     : 0;
+    box-sizing : border-box;
+    font-family: sans-serif;
+  }
+  
+  #root {
+    height     : 100vh;
+  }
