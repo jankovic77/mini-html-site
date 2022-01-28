@@ -11,7 +11,7 @@
         body {
             display: flex;
             justify-content: center;
-            background-color: rgb(191, 239, 245);
+            background-color: rgb(245, 199, 191);
         }
 
         #my-canvas {
@@ -29,7 +29,7 @@
 <body>
 
 
-    <canvas id="my-canvas" width="900" height="600">
+    <canvas id="my-canvas" width="880" height="600" >
         Your web browser does not support canvas element.
     </canvas>
 
@@ -40,7 +40,7 @@
             let ctx = myCanvas.getContext('2d');
 
 
-            //window.onload = draw;
+            
             setInterval(draw,1000);
 
 
@@ -71,9 +71,8 @@
         function update(ctx) {
 
 
-//////////////////////////////////////////////////////////kazaljka sekundara///////////////////////////////////////////////////////////////
                 ctx.save();
-                ctx.clearRect(0, 0, 900, 600);
+                ctx.clearRect(0, 0, 880, 600);
 
                 ctx.translate(450, 300);
                 ctx.rotate((Math.PI / 180) * angle);
@@ -83,7 +82,7 @@
                 ctx.lineWidth = 8;
                 ctx.lineCap = 'round';
                 ctx.moveTo(450, 300);
-                ctx.lineTo(450, 50);
+                ctx.lineTo(450, 100);
                 ctx.stroke();
 
 
@@ -92,11 +91,6 @@
                 angle=angle+6;
 
 
-
-
-
-
-////////////////////////////////////////////////////////kazaljka minutara//////////////////////////////////////////////////////////////////
                 ctx.save();
 
                 ctx.translate(450, 300);
@@ -104,16 +98,14 @@
                 ctx.translate(-450, -300);
 
                 ctx.beginPath();
-                ctx.lineWidth = 8;
+                ctx.lineWidth = 9;
                 ctx.lineCap = 'round';
                 ctx.moveTo(450, 300);
-                ctx.lineTo(280, 200);
+                ctx.lineTo(480, 150);
                 ctx.stroke();
-
 
                 ctx.restore();
                 
-////////////////////////////////////////////////////////////////////////kazaljka satnica///////////////////////////////////////////////////////////////////
                 ctx.save();
 
                 ctx.translate(450, 300);
@@ -121,7 +113,7 @@
                 ctx.translate(-450, -300);
 
                 ctx.beginPath();
-                ctx.lineWidth = 8;
+                ctx.lineWidth = 9;
                 ctx.lineCap = 'round';
                 ctx.moveTo(450, 300);
                 ctx.lineTo(450, 390);
@@ -145,8 +137,8 @@
 
                 
                 if(angle==360) {
-                angle1=angle1+6;
-                angle2=angle2+1;
+                angle1=angle1+7;
+                angle2=angle2+2;
                 angle=0;
                 }
 
